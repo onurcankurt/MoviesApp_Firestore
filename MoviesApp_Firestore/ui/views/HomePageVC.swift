@@ -44,7 +44,7 @@ class HomePageVC: UIViewController {
 
 extension HomePageVC: CellProtocol{
     func addToCart(indexPath: IndexPath) {
-        print("\(moviesList[indexPath.row].name!) added to cart.")
+        viewModel.addToCart(list: moviesList, indexPath: indexPath)
     }
     
     

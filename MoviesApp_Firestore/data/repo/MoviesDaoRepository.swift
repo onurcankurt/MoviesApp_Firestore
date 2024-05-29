@@ -31,4 +31,8 @@ class MoviesDaoRepository {
             self.movieRXList.onNext(list)
         }
     }
+    
+    func addToCart(list: [Movie], indexPath: IndexPath){
+        print("\(list[indexPath.row].name!) added to cart.")
+    }
 }
