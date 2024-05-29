@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailsVC: UIViewController {
     
@@ -20,8 +21,12 @@ class DetailsVC: UIViewController {
 
         if let m = detailsMovie{
             nameLabel.text = m.name
-            movieImageView.image = UIImage(named: m.image!)
-            priceLabel.text = m.price
+            if let url = URL(string: "http://kasimadalan.pe.hu/filmler_yeni/resimler/\(m.image!)"){
+                DispatchQueue.main.async {
+                    self.movieImageView.kf.setImage(with: url)
+                }
+            }
+            priceLabel.text = "\(m.price!) ₺"
         }
     }
 }

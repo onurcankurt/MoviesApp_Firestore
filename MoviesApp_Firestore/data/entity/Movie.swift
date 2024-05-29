@@ -11,12 +11,12 @@ class Movie {
     var id: String?
     var name: String?
     var image: String?
-    var price: String?
+    var price: Int?
     
     init() {
     }
     
-    init(id: String, name: String, image: String, price: String) {
+    init(id: String, name: String, image: String, price: Int) {
         self.id = id
         self.name = name
         self.image = image

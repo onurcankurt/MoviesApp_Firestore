@@ -21,6 +21,7 @@
 		77BE761B2C07E20400813093 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77BE761A2C07E20400813093 /* GoogleService-Info.plist */; };
 		77BE762C2C07E26300813093 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 77BE762B2C07E26300813093 /* FirebaseFirestore */; };
 		77BE76572C07E2B300813093 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 77BE76562C07E2B300813093 /* RxSwift */; };
+		77BE765A2C07E65900813093 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 77BE76592C07E65900813093 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77BE765A2C07E65900813093 /* Kingfisher in Frameworks */,
 				77BE762C2C07E26300813093 /* FirebaseFirestore in Frameworks */,
 				77BE76572C07E2B300813093 /* RxSwift in Frameworks */,
 			);
@@ -164,6 +166,7 @@
 			packageProductDependencies = (
 				77BE762B2C07E26300813093 /* FirebaseFirestore */,
 				77BE76562C07E2B300813093 /* RxSwift */,
+				77BE76592C07E65900813093 /* Kingfisher */,
 			);
 			productName = MoviesApp_Firestore;
 			productReference = 77BE75F22C07DA6700813093 /* MoviesApp_Firestore.app */;
@@ -196,6 +199,7 @@
 			packageReferences = (
 				77BE761C2C07E26300813093 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				77BE764B2C07E2B300813093 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				77BE76582C07E65900813093 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 77BE75F32C07DA6700813093 /* Products */;
 			projectDirPath = "";
@@ -473,6 +477,14 @@
 				minimumVersion = 6.7.1;
 			};
 		};
+		77BE76582C07E65900813093 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -485,6 +497,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 77BE764B2C07E2B300813093 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		77BE76592C07E65900813093 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77BE76582C07E65900813093 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

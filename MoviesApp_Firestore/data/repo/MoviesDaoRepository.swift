@@ -22,7 +22,7 @@ class MoviesDaoRepository {
                     let id = document.documentID
                     let name = data["ad"] as? String ?? ""
                     let image = data["resim"] as? String ?? ""
-                    let price = data["fiyat"] as? String ?? ""
+                    let price = data["fiyat"] as? Int ?? 0
                     
                     let movie = Movie(id: id, name: name, image: image, price: price)
                     list.append(movie)

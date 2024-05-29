@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomePageVC: UIViewController {
 
@@ -60,11 +61,11 @@ extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         cell.movieImageView.image = UIImage(named: "TEST")
         
-//        if let url = URL(string: "http://kasimadalan.pe.hu/filmler_yeni/resimler/\(movie.image!)"){
-//            DispatchQueue.main.async {
-//                cell.movieImageView.
-//            }
-//        }
+        if let url = URL(string: "http://kasimadalan.pe.hu/filmler_yeni/resimler/\(movie.image!)"){
+            DispatchQueue.main.async {
+                cell.movieImageView.kf.setImage(with: url)
+            }
+        }
         
         cell.priceLabel.text = "\(movie.price!) ₺"
         
