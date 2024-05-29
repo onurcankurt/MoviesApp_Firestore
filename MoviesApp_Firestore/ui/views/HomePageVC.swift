@@ -10,14 +10,22 @@ import UIKit
 class HomePageVC: UIViewController {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
-    var moviesList = [Movie]()
     
+    var moviesList = [Movie]()
+    var viewModel = HomePageVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         moviesCollectionView.delegate = self
         moviesCollectionView.dataSource = self
+        
+        _ = viewModel.movieRXList.subscribe(onNext: { movies in
+            self.moviesList = movies
+            DispatchQueue.main.async {
+                self.moviesCollectionView.reloadData()
+            }
+        })
         
         let design = UICollectionViewFlowLayout()
         
@@ -51,6 +59,13 @@ extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! MovieCell
         
         cell.movieImageView.image = UIImage(named: "TEST")
+        
+//        if let url = URL(string: "http://kasimadalan.pe.hu/filmler_yeni/resimler/\(movie.image!)"){
+//            DispatchQueue.main.async {
+//                cell.movieImageView.
+//            }
+//        }
+        
         cell.priceLabel.text = "\(movie.price!) ₺"
         
         cell.cellProtocol = self
