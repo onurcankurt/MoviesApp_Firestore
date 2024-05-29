@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomePageVC: UIViewController {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     var moviesList = [Movie]()
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: CellProtocol{
+extension HomePageVC: CellProtocol{
     func addToCart(indexPath: IndexPath) {
         print("\(moviesList[indexPath.row].name!) added to cart.")
     }
@@ -41,7 +41,7 @@ extension ViewController: CellProtocol{
     
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         moviesList.count
     }
@@ -62,5 +62,20 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = moviesList[indexPath.row]
+        performSegue(withIdentifier: "toDetailsVC", sender: movie)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC"{
+            if let senderMovie = sender as? Movie{
+                let destinationVC = segue.destination as! DetailsVC
+                destinationVC.detailsMovie = senderMovie
+            }
+        }
+    }
+    
 }
 
