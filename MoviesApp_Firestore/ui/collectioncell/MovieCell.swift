@@ -19,8 +19,6 @@ class MovieCell: UICollectionViewCell {
     var indexPath: IndexPath?
     var cellProtocol: CellProtocol?
     
-    
-    
     @IBAction func addToCartButton(_ sender: Any) {
         cellProtocol?.addToCart(indexPath: indexPath!)
     }

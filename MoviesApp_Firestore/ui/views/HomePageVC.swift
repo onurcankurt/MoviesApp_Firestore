@@ -46,8 +46,6 @@ extension HomePageVC: CellProtocol{
     func addToCart(indexPath: IndexPath) {
         viewModel.addToCart(list: moviesList, indexPath: indexPath)
     }
-    
-    
 }
 
 extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -92,6 +90,4 @@ extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource {
             }
         }
     }
-    
 }
-
